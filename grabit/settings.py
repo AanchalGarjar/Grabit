@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,10 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-n2qo^x-9-mp!#4v76(0&wo#71%072f-*p8k+u!$%)h2#!2%1r^'
+SECRET_KEY = os.environ.get(
+    "SECRET_KEY",
+    "django-insecure-n2qo^x-9-mp!#4v76(0&wo#71%072f-*p8k+u!$%)h2#!2%1r^"
+)
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = [
     ".onrender.com",
@@ -120,7 +123,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Default primary key field type
@@ -128,6 +131,13 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-RAZORPAY_KEY_ID = 'rzp_test_RbeVLcus4ylBXp'
-RAZORPAY_KEY_SECRET ='yZGuTwUIJj74Y0VDgDt2Qxah'
+RAZORPAY_KEY_ID = os.environ.get(
+    "RAZORPAY_KEY_ID",
+    "rzp_test_RbeVLcus4ylBXp"
+)
+
+RAZORPAY_KEY_SECRET = os.environ.get(
+    "RAZORPAY_KEY_SECRET",
+    "yZGuTwUIJj74Y0VDgDt2Qxah"
+)
 
