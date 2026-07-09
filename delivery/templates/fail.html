@@ -3,48 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     {% load static %}
+    {% load static %}
     <link rel="stylesheet" href="{% static 'styles.css' %}">
-    <title>Document</title>
-   <style>
-        body {
-            margin: 0;
+    <title>Login Failed</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
             font-family: "Poppins", sans-serif;
-            background-color: #f3de92; /* light red background */
-            height: 100vh;
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            padding: 20px;
+            background: linear-gradient(135deg, #f3de92, #f8c6c6);
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:20px;
         }
 
-        .login-failed-box {
-            text-align: left;
+        .login-failed-box{
+            background:#fff;
+            width:100%;
+            max-width:420px;
+            padding:40px 30px;
+            border-radius:15px;
+            text-align:center;
+            box-shadow:0 10px 25px rgba(0,0,0,0.2);
         }
 
-        .login-failed-box h1 {
-            color: #dc3545; /* dark red for the message */
-            font-size: 1.8rem;
-            margin: 0 0 10px 0;
+        .login-failed-box h1{
+            color:#dc3545;
+            font-size:2rem;
+            margin-bottom:25px;
         }
 
-        .login-failed-box a {
-            display: inline-block;
-            color: #dc3545;
-            text-decoration: underline;
-            font-weight: 500;
-            cursor: pointer;
+        .login-failed-box a{
+            display:inline-block;
+            background:#b02a37;
+            color:#fff;
+            text-decoration:none;
+            padding:12px 25px;
+            border-radius:8px;
+            font-size:16px;
+            font-weight:600;
+            transition:0.3s;
         }
 
-        .login-failed-box a:hover {
-            color: #a71d2a;
+        .login-failed-box a:hover{
+            background:#a2d713;
+            transform:translateY(-2px);
         }
+
+        /* Mobile */
+        @media (max-width:576px){
+
+            .login-failed-box{
+                padding:30px 20px;
+                max-width:95%;
+            }
+
+            .login-failed-box h1{
+                font-size:1.6rem;
+            }
+
+            .login-failed-box a{
+                display:block;
+                width:100%;
+                padding:12px;
+            }
+
+        }
+
     </style>
+
 </head>
+
 <body>
+
     <div class="login-failed-box">
-    <h1 style="color: red;">Login failed!!!</h1>
-    <a href="{% url 'signin' %}">Sign in again</a>
+
+        <h1>Login Failed!</h1>
+
+        <a href="{% url 'signin' %}">
+            Sign In Again
+        </a>
+
     </div>
+
 </body>
 </html>

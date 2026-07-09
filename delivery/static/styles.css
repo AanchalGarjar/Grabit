@@ -1,3 +1,17 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    overflow-x:hidden;
+    width:100%;
+}
 /* ===== Welcome Page Styling ===== */
 .welcome-container {
     display: flex;
@@ -61,7 +75,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 320px;
+    width:100%;
+    max-width:320px;
 }
 
 .signin-container label {
@@ -132,7 +147,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 370px;
+    width:100%;
+    max-width:370px;
 }
 
 .signup-container label {
@@ -206,7 +222,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 400px;
+    width:100%;
+    max-width:400px;
 }
 
 .add-restaurant-container label {
@@ -783,7 +800,8 @@ input.add-btn:hover {
     box-shadow: 0 6px 20px rgba(0,0,0,0.2);
     display: flex;
     flex-direction: column;
-    width: 350px;
+    width:100%;
+    max-width:350px;
     margin-bottom: 40px;
 }
 
@@ -998,5 +1016,98 @@ input.add-btn:hover {
     }
     .thank-you-container p {
         font-size: 1rem;
+    }
+}
+/* ================================
+   MOBILE DEVICES (Phones)
+================================ */
+@media screen and (max-width: 576px) {
+
+    body{
+        overflow-x: hidden;
+        padding: 10px;
+    }
+
+    h1{
+        font-size: 1.6rem !important;
+        text-align: center;
+    }
+
+    h2{
+        font-size: 1.3rem !important;
+        text-align: center;
+    }
+
+    h3{
+        font-size: 1.1rem !important;
+        text-align: center;
+    }
+
+    /* Containers */
+    .welcome-container,
+    .signin-container,
+    .signup-container,
+    .admin-home-container,
+    .customer-home-container,
+    .customer-menu-container,
+    .display-restaurants-container,
+    .show-restaurants-container,
+    .add-item-container,
+    .add-restaurant-container,
+    .thank-you-container{
+        width: 100%;
+        padding: 15px 10px;
+    }
+
+    /* Forms */
+    form{
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    input,
+    select,
+    textarea{
+        width: 100%;
+    }
+
+    /* Buttons */
+    button,
+    input[type="submit"]{
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        margin-top: 8px;
+    }
+
+    /* Images */
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Tables */
+    table{
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        font-size: 13px;
+    }
+
+    table th,
+    table td{
+        padding: 8px;
+    }
+
+    table img{
+        width: 80px !important;
+        height: auto !important;
+    }
+
+    /* Links */
+    a{
+        display: inline-block;
+        text-align: center;
     }
 }
